@@ -12,13 +12,15 @@ public class Pemilihan2Percobaan116 {
         tahun = input16.nextInt();
 
         // Logika untuk menentukan tahun kabisat
-        if ((tahun % 4) == 0) {
-            if ((tahun % 100) != 0) {
-                System.out.println("Tahun Kabisat");
-            } else {
-                System.out.println("Bukan Tahun Kabisat");
-            }
-        }
+        if ((tahun % 4) == 0) { // Jika tahun kelipatan 4
+            if ((tahun % 100) == 0) { // Jika tahun kelipatan 100
+                if ((tahun % 400) == 0) { // Jika tahun kelipatan 400
+                    System.out.println("Tahun Kabisat");
+                } else {
+                    System.out.println("Bukan Tahun Kabisat");
+                }
 
+        }
     }
+}
 }
