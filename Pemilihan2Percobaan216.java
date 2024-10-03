@@ -4,7 +4,7 @@ public class Pemilihan2Percobaan216 {
 
     public static void main(String[] args) {
         Scanner input16 = new Scanner(System.in);
-        int pilihan_menu;
+        int pilihan_menu, jumlah_beli;
         double harga = 0, diskon = 0, total_bayar;
         String member;
 
@@ -23,6 +23,9 @@ public class Pemilihan2Percobaan216 {
 
         System.out.print("Apakah Punya Member (y/n): ");
         member = input16.nextLine();
+
+        System.out.print("Masukkan Jumlah Beli: ");
+        jumlah_beli=input16.nextInt();
 
         System.out.println("----------------------------------------");
 
@@ -45,11 +48,12 @@ public class Pemilihan2Percobaan216 {
         if (member.equalsIgnoreCase("y")) {
             diskon = 0.10; 
             System.out.println("Besar diskon = 10%");
-            total_bayar = harga - (harga * diskon);
+
+            total_bayar = (harga * jumlah_beli) - ((harga * jumlah_beli) * diskon);
             System.out.println("Total Bayar Setelah Diskon: Rp " + total_bayar);
 
         } else if (member.equalsIgnoreCase("n")) {
-            total_bayar = harga; 
+            total_bayar = harga*jumlah_beli; 
             System.out.println("Total Bayar: Rp " + total_bayar);
 
         } else {
